@@ -3,7 +3,7 @@
 
 export const meta = {
   name: "Udbhav Saxena",
-  title: "Founding ML Engineer · LLMs · RAG · Full-Stack ML Systems",
+  title: "Machine Learning Engineer · LLMs · RAG · Full-Stack ML Systems",
   pitch:
     "3 years building production clinical AI — agentic LLM systems, RAG pipelines, speech workflows, and EHR platforms that ship and actually work.",
   email: "udbhav.saxena@gmail.com",
@@ -13,14 +13,14 @@ export const meta = {
   photo: "/e.png",
 };
 
-export const about = `Founding ML Engineer with 3 years building production clinical AI spanning LLMs, RAG, full-stack ML systems, speech pipelines, and EHR integration.
+export const about = `Machine Learning Engineer with 3 years building production clinical AI spanning LLMs, RAG, full-stack ML systems, speech pipelines, and EHR integration.
 Shipped evaluated, production-grade systems reducing clinical documentation time by 70% across behavioral health workflows.
 I care about building things that actually make it to production — not just demos.`;
 
 export const experience = [
   {
     company: "Civitas Health Services",
-    role: "Machine Learning Engineer (Founding)",
+    role: "Machine Learning Engineer",
     period: "2023 – Present",
     bullets: [
       "Agentic Clinical Documentation: Built and shipped an agentic LLM system (OpenAI function calling, custom orchestration) for autonomous generation of progress notes, ISP summaries, and SMART goals; reduced average note completion time by ~70%.",
