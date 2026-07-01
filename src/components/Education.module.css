@@ -1,0 +1,72 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 720px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 24px;
+  transition: border-color var(--t), box-shadow var(--t), transform var(--t);
+}
+.card:hover {
+  border-color: rgba(108, 99, 255, 0.4);
+  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.07);
+  transform: translateX(3px);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.info {
+  flex: 1;
+}
+
+.degree {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.school {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.year {
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding: 4px 10px;
+  background: var(--bg-surface);
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 500px) {
+  .card {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .year {
+    margin-left: 68px;
+  }
+}
