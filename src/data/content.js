@@ -39,15 +39,6 @@ export const experience = [
       "Collaborated cross-functionally to prototype and evaluate predictive models in production settings.",
     ],
   },
-  {
-    company: "Apex IT Systems",
-    role: "ML Engineer Intern",
-    period: "Jan 2021 – May 2021",
-    bullets: [
-      "Developed ML prototypes and data pipelines for applied software projects.",
-      "Built model training workflows and evaluation infrastructure for classification and regression tasks.",
-    ],
-  },
 ];
 
 export const projects = [
