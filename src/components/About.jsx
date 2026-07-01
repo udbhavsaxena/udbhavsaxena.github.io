@@ -1,4 +1,5 @@
 import { about, meta } from '../data/content'
+import Reveal from './Reveal'
 import styles from './About.module.css'
 
 export default function About() {
@@ -7,7 +8,7 @@ export default function About() {
   return (
     <section id="about" aria-labelledby="about-heading">
       <div className={`container ${styles.wrapper}`}>
-        <div className={styles.left}>
+        <Reveal className={styles.left}>
           <p className="section-label">About</p>
           <h2 id="about-heading" className="section-title">
             Who I am<span>.</span>
@@ -15,19 +16,23 @@ export default function About() {
           <div className={styles.avatar}>
             <img src={meta.photo} alt="Udbhav Saxena" className={styles.avatarImg} />
           </div>
-        </div>
+        </Reveal>
 
         <div className={styles.right}>
           {paragraphs.map((p, i) => (
-            <p key={i} className={styles.para}>{p}</p>
+            <Reveal key={i} delay={i * 100}>
+              <p className={styles.para}>{p}</p>
+            </Reveal>
           ))}
-          <div className={styles.highlights}>
-            <Highlight icon="🧠" label="Applied AI & LLM Systems" />
-            <Highlight icon="🏥" label="Healthcare Software" />
-            <Highlight icon="👁" label="Computer Vision" />
-            <Highlight icon="🤖" label="Robotics & Automation" />
-            <Highlight icon="⚙️" label="Backend Engineering" />
-          </div>
+          <Reveal delay={paragraphs.length * 100}>
+            <div className={styles.highlights}>
+              <Highlight icon="🧠" label="Applied AI & LLM Systems" />
+              <Highlight icon="🏥" label="Healthcare Software" />
+              <Highlight icon="👁"  label="Computer Vision" />
+              <Highlight icon="🤖" label="Robotics & Automation" />
+              <Highlight icon="⚙️" label="Backend Engineering" />
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

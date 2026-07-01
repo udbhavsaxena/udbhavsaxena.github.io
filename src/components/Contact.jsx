@@ -1,47 +1,42 @@
 import { meta } from '../data/content'
+import Reveal from './Reveal'
 import styles from './Contact.module.css'
 
 export default function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-heading">
       <div className="container">
-        <p className="section-label">Get In Touch</p>
-        <h2 id="contact-heading" className="section-title">
-          Contact<span>.</span>
-        </h2>
-        <div className={styles.inner}>
-          <p className={styles.blurb}>
-            I'm open to full-time roles in ML engineering, applied AI, and software engineering.
-            Feel free to reach out via email or connect on LinkedIn.
-          </p>
-          <div className={styles.links}>
-            <a href={`mailto:${meta.email}`} className={styles.link}>
-              <EmailIcon />
-              <span>{meta.email}</span>
-            </a>
-            <a href={meta.github} target="_blank" rel="noopener noreferrer" className={styles.link}>
-              <GitHubIcon />
-              <span>github.com/udbhavsaxena</span>
-            </a>
-            <a
-              href={meta.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.link}
-            >
-              <LinkedInIcon />
-              <span>linkedin.com/in/udbhav-saxena</span>
+        <Reveal>
+          <p className="section-label">Get In Touch</p>
+          <h2 id="contact-heading" className="section-title">
+            Contact<span>.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={100}>
+          <div className={styles.inner}>
+            <p className={styles.blurb}>
+              I'm open to full-time roles in ML engineering, applied AI, and software engineering.
+              Feel free to reach out via email or connect on LinkedIn.
+            </p>
+            <div className={styles.links}>
+              <a href={`mailto:${meta.email}`} className={styles.link}>
+                <EmailIcon />
+                <span>{meta.email}</span>
+              </a>
+              <a href={meta.github} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                <GitHubIcon />
+                <span>github.com/udbhavsaxena</span>
+              </a>
+              <a href={meta.linkedin} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                <LinkedInIcon />
+                <span>linkedin.com/in/udbhav-saxena</span>
+              </a>
+            </div>
+            <a href={meta.resume} className={styles.resumeBtn} target="_blank" rel="noopener noreferrer">
+              Download Resume
             </a>
           </div>
-          <a
-            href={meta.resume}
-            className={styles.resumeBtn}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Download Resume
-          </a>
-        </div>
+        </Reveal>
       </div>
     </section>
   )

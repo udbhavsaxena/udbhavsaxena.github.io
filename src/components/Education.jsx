@@ -1,26 +1,31 @@
 import { education } from '../data/content'
+import Reveal from './Reveal'
 import styles from './Education.module.css'
 
 export default function Education() {
   return (
     <section id="education" aria-labelledby="education-heading">
       <div className="container">
-        <p className="section-label">Academic Background</p>
-        <h2 id="education-heading" className="section-title">
-          Education<span>.</span>
-        </h2>
+        <Reveal>
+          <p className="section-label">Academic Background</p>
+          <h2 id="education-heading" className="section-title">
+            Education<span>.</span>
+          </h2>
+        </Reveal>
         <div className={styles.list}>
           {education.map((edu, i) => (
-            <article key={i} className={styles.card}>
-              <div className={styles.icon} aria-hidden="true">
-                <GradIcon />
-              </div>
-              <div className={styles.info}>
-                <h3 className={styles.degree}>{edu.degree}</h3>
-                <p className={styles.school}>{edu.school}</p>
-              </div>
-              <span className={styles.year}>{edu.year}</span>
-            </article>
+            <Reveal key={i} delay={i * 110}>
+              <article className={styles.card}>
+                <div className={styles.icon} aria-hidden="true">
+                  <GradIcon />
+                </div>
+                <div className={styles.info}>
+                  <h3 className={styles.degree}>{edu.degree}</h3>
+                  <p className={styles.school}>{edu.school}</p>
+                </div>
+                <span className={styles.year}>{edu.year}</span>
+              </article>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -4,9 +4,11 @@ import styles from './Hero.module.css'
 export default function Hero() {
   return (
     <section id="hero" className={styles.hero} aria-label="Introduction">
-      <div className={styles.bg} aria-hidden="true" />
       <div className={`container ${styles.content}`}>
-        <p className={styles.greeting}>Hi, I'm</p>
+        <p className={styles.greeting}>
+          <span className={styles.prompt}>{'>'}</span> Hi, I'm
+          <span className={styles.cursor} aria-hidden="true" />
+        </p>
         <h1 className={styles.name}>{meta.name}</h1>
         <p className={styles.title}>{meta.title}</p>
         <p className={styles.pitch}>{meta.pitch}</p>
@@ -15,31 +17,14 @@ export default function Hero() {
           <a href="#projects" className={styles.btnPrimary}>
             View Projects
           </a>
-          <a
-            href={meta.resume}
-            className={styles.btnOutline}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={meta.resume} className={styles.btnOutline} target="_blank" rel="noopener noreferrer">
             Download Resume
           </a>
-          <a
-            href={meta.github}
-            className={styles.btnIcon}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-          >
+          <a href={meta.github} className={styles.btnIcon} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
             <GitHubIcon />
             GitHub
           </a>
-          <a
-            href={meta.linkedin}
-            className={styles.btnIcon}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-          >
+          <a href={meta.linkedin} className={styles.btnIcon} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
             <LinkedInIcon />
             LinkedIn
           </a>
