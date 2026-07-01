@@ -9,8 +9,8 @@ export const meta = {
   email: "udbhav.saxena@gmail.com",
   github: "https://github.com/udbhavsaxena",
   linkedin: "https://www.linkedin.com/in/udbhav-saxena/",
-  // TODO: Place your resume PDF in public/ and update this path
   resume: "/Udbhav_Saxena_Resume.pdf",
+  photo: "/e.png",
 };
 
 export const about = `Master's in Engineering Science focused on Robotics & AI from the University at Buffalo.

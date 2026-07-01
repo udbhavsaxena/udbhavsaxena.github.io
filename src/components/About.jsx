@@ -1,4 +1,4 @@
-import { about } from '../data/content'
+import { about, meta } from '../data/content'
 import styles from './About.module.css'
 
 export default function About() {
@@ -12,8 +12,8 @@ export default function About() {
           <h2 id="about-heading" className="section-title">
             Who I am<span>.</span>
           </h2>
-          <div className={styles.avatar} aria-hidden="true">
-            <span>US</span>
+          <div className={styles.avatar}>
+            <img src={meta.photo} alt="Udbhav Saxena" className={styles.avatarImg} />
           </div>
         </div>
 
