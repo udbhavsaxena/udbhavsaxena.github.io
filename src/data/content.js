@@ -5,7 +5,7 @@ export const meta = {
   name: "Udbhav Saxena",
   title: "Machine Learning Engineer · LLMs · RAG · Full-Stack ML Systems",
   pitch:
-    "3 years building production clinical AI — agentic LLM systems, RAG pipelines, speech workflows, and EHR platforms that ship and actually work.",
+    "3 years shipping production ML systems in healthcare: agentic LLMs, RAG pipelines, call transcription, and full-stack EHR platforms.",
   email: "udbhav.saxena@gmail.com",
   github: "https://github.com/udbhavsaxena",
   linkedin: "https://www.linkedin.com/in/udbhav-saxena/",
@@ -13,9 +13,8 @@ export const meta = {
   photo: "/e.png",
 };
 
-export const about = `Machine Learning Engineer with 3 years building production clinical AI spanning LLMs, RAG, full-stack ML systems, speech pipelines, and EHR integration.
-Shipped evaluated, production-grade systems reducing clinical documentation time by 70% across behavioral health workflows.
-I care about building things that actually make it to production — not just demos.`;
+export const about = `Machine Learning Engineer with 3 years of experience building clinical AI systems across LLMs, RAG, speech pipelines, and full-stack EHR platforms.
+Shipped production systems that reduced clinical documentation time by 70% across behavioral health workflows.`;
 
 export const experience = [
   {
