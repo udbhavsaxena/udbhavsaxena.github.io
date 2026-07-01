@@ -1,72 +1,68 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  max-width: 720px;
+  gap: 14px;
+  max-width: 700px;
 }
 
 .card {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px 24px;
+  padding: 20px 22px;
   transition: border-color var(--t), box-shadow var(--t), transform var(--t);
+  box-shadow: var(--card-shadow);
 }
 .card:hover {
-  border-color: rgba(108, 99, 255, 0.4);
-  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.07);
-  transform: translateX(3px);
+  border-color: var(--accent-border);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateX(2px);
 }
 
 .icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: var(--accent-dim);
-  border: 1px solid rgba(108, 99, 255, 0.25);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--accent);
 }
 
-.info {
-  flex: 1;
-}
+.info { flex: 1; }
 
 .degree {
-  font-size: 1rem;
+  font-size: 0.97rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 4px;
+  margin-bottom: 3px;
+  letter-spacing: -0.01em;
 }
 
 .school {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
 }
 
 .year {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-family: var(--font-mono);
   color: var(--text-muted);
   white-space: nowrap;
-  padding: 4px 10px;
+  padding: 3px 10px;
   background: var(--bg-surface);
   border-radius: 999px;
   border: 1px solid var(--border);
+  flex-shrink: 0;
 }
 
 @media (max-width: 500px) {
-  .card {
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-  .year {
-    margin-left: 68px;
-  }
+  .card { flex-wrap: wrap; gap: 12px; }
+  .year { margin-left: 62px; }
 }

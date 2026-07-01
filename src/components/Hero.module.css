@@ -6,62 +6,75 @@
   overflow: hidden;
 }
 
-/* Radial gradient background glow */
-.bg {
+/* Subtle grid texture — looks clean in both themes */
+.hero::before {
+  content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108, 99, 255, 0.12) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 40% at 80% 80%, rgba(108, 99, 255, 0.06) 0%, transparent 60%);
+  background-image:
+    linear-gradient(var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Fade grid at bottom */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, var(--bg-base) 100%);
   pointer-events: none;
 }
 
 .content {
   position: relative;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 110px;
   padding-bottom: 80px;
-  max-width: 800px;
+  max-width: 760px;
 }
 
 .greeting {
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--accent);
-  margin-bottom: 12px;
-  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+  font-family: var(--font-mono);
 }
 
 .name {
-  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
   font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--text-primary);
   margin-bottom: 16px;
 }
 
 .title {
-  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
   font-weight: 400;
   color: var(--text-secondary);
-  margin-bottom: 24px;
-  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+  letter-spacing: 0.005em;
 }
 
 .pitch {
-  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
   color: var(--text-secondary);
-  line-height: 1.7;
-  max-width: 580px;
+  line-height: 1.75;
+  max-width: 540px;
   margin-bottom: 40px;
 }
 
-/* Buttons row */
+/* Buttons */
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -69,30 +82,28 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 0.9rem;
+  padding: 11px 22px;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  font-size: 0.875rem;
   font-weight: 600;
   border-radius: var(--radius-sm);
-  transition: background var(--t), transform var(--t), box-shadow var(--t);
-  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.35);
+  transition: background var(--t), transform var(--t);
 }
 .btnPrimary:hover {
-  background: var(--accent-light);
-  color: #fff;
+  background: var(--btn-primary-hover);
+  color: var(--btn-primary-text);
   transform: translateY(-1px);
-  box-shadow: 0 6px 28px rgba(108, 99, 255, 0.45);
 }
 
 .btnOutline {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 11px 24px;
-  border: 1.5px solid var(--border);
+  padding: 10px 22px;
+  border: 1px solid var(--border);
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
   border-radius: var(--radius-sm);
   transition: border-color var(--t), color var(--t), background var(--t), transform var(--t);
@@ -108,10 +119,10 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 11px 18px;
-  border: 1.5px solid var(--border);
+  padding: 10px 16px;
+  border: 1px solid var(--border);
   color: var(--text-muted);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 500;
   border-radius: var(--radius-sm);
   transition: border-color var(--t), color var(--t), background var(--t), transform var(--t);
@@ -123,33 +134,26 @@
   transform: translateY(-1px);
 }
 
-/* Scroll indicator */
+/* Scroll cue */
 .scroll {
   position: absolute;
   bottom: 36px;
   left: 24px;
+  z-index: 1;
 }
 .scrollLine {
   display: block;
-  width: 1.5px;
-  height: 48px;
+  width: 1px;
+  height: 44px;
   background: linear-gradient(to bottom, var(--accent), transparent);
   animation: scrollDrop 2s ease-in-out infinite;
 }
-
 @keyframes scrollDrop {
-  0%, 100% { transform: scaleY(1); opacity: 1; }
-  50%       { transform: scaleY(0.6) translateY(8px); opacity: 0.4; }
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50%       { opacity: 0.3; transform: scaleY(0.6) translateY(6px); }
 }
 
 @media (max-width: 600px) {
-  .actions {
-    gap: 10px;
-  }
-  .btnPrimary, .btnOutline {
-    padding: 11px 20px;
-  }
-  .scroll {
-    display: none;
-  }
+  .actions { gap: 8px; }
+  .scroll  { display: none; }
 }
