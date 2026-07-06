@@ -9,7 +9,7 @@ export const meta = {
   email: "udbhav.saxena@gmail.com",
   github: "https://github.com/udbhavsaxena",
   linkedin: "https://www.linkedin.com/in/udbhav-saxena/",
-  resume: "/Udbhav_Saxena_Resume-2.pdf",
+  resume: "/Udbhav_Saxena_Resume-3.pdf",
   photo: "/e.png",
 };
 
