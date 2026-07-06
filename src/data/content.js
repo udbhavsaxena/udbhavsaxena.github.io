@@ -43,7 +43,6 @@ export const experience = [
 export const projects = [
   {
     title: "AgentBench-Lite",
-    eyebrow: "Primary portfolio project",
     impact: "Async multi-agent evaluation framework",
     description:
       "Local-first framework for running, tracing, and evaluating multi-agent LLM systems. Built research, planning, critic, and orchestrator agents with structured outputs, tool-use metrics, DuckDB persistence, FastAPI endpoints, and a Streamlit dashboard.",
@@ -58,7 +57,6 @@ export const projects = [
   },
   {
     title: "RAG Eval Dashboard",
-    eyebrow: "Important RAG systems highlight",
     impact: "Production-style RAG quality dashboard",
     description:
       "Evaluation-first RAG system over a clinical guideline corpus. It compares chunking strategies, builds FAISS indexes, runs retrieval and faithfulness evaluation, and exposes per-query traces for debugging grounded answers.",
@@ -73,7 +71,6 @@ export const projects = [
   },
   {
     title: "Chat With PDFs",
-    eyebrow: "User-facing RAG app",
     impact: "PDF upload/link question-answering",
     description:
       "Clean Streamlit app that lets users upload PDFs or paste public PDF URLs, builds a local vector store from extracted page text, and answers questions with page-level citations.",
