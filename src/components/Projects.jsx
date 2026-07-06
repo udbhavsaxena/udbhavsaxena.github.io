@@ -26,10 +26,13 @@ export default function Projects() {
 
 function ProjectCard({ project }) {
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${project.featured ? styles.featured : ''}`}>
       <div className={styles.top}>
-        <div className={styles.iconWrap} aria-hidden="true">
-          <FolderIcon />
+        <div className={styles.headingMeta}>
+          <div className={styles.iconWrap} aria-hidden="true">
+            <FolderIcon />
+          </div>
+          {project.eyebrow && <span className={styles.eyebrow}>{project.eyebrow}</span>}
         </div>
         {project.link && (
           <a
@@ -43,8 +46,16 @@ function ProjectCard({ project }) {
           </a>
         )}
       </div>
+      {project.impact && <p className={styles.impact}>{project.impact}</p>}
       <h3 className={styles.title}>{project.title}</h3>
       <p className={styles.description}>{project.description}</p>
+      {project.highlights && (
+        <ul className={styles.highlights}>
+          {project.highlights.map(item => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      )}
       <div className={styles.tags}>
         {project.tags.map(tag => (
           <span key={tag} className={styles.tag}>{tag}</span>

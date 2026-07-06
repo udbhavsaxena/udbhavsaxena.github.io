@@ -42,28 +42,60 @@ export const experience = [
 
 export const projects = [
   {
-    title: "Clinical RAG Pipeline",
+    title: "AgentBench-Lite",
+    eyebrow: "Primary portfolio project",
+    impact: "Async multi-agent evaluation framework",
     description:
-      "End-to-end retrieval-augmented generation system over behavioral health guidelines. Chunking, embedding (OpenAI), pgvector storage, and re-ranking — grounded LLM outputs in source documents with citation traces.",
-    tags: ["RAG", "pgvector", "OpenAI", "Flask", "Python"],
-    link: null,
+      "Local-first framework for running, tracing, and evaluating multi-agent LLM systems. Built research, planning, critic, and orchestrator agents with structured outputs, tool-use metrics, DuckDB persistence, FastAPI endpoints, and a Streamlit dashboard.",
+    highlights: [
+      "25-task benchmark with 11 metrics: faithfulness, tool precision/recall, citations, latency, cost, schema validity",
+      "Async orchestration with bounded concurrency, timeouts, retry handling, and sequential fallback",
+      "Runs fully offline in mock mode; also supports OpenAI-backed live runs",
+    ],
+    tags: ["Agents", "Evaluation", "FastAPI", "DuckDB", "Streamlit", "Pydantic"],
+    link: "https://github.com/udbhavsaxena/agentbench-lite",
+    featured: true,
+  },
+  {
+    title: "RAG Eval Dashboard",
+    eyebrow: "Important RAG systems highlight",
+    impact: "Production-style RAG quality dashboard",
+    description:
+      "Evaluation-first RAG system over a clinical guideline corpus. It compares chunking strategies, builds FAISS indexes, runs retrieval and faithfulness evaluation, and exposes per-query traces for debugging grounded answers.",
+    highlights: [
+      "Compares word, sentence, and semantic chunking across Recall@K, Precision@K, MRR, nDCG, faithfulness, latency, and cost",
+      "Includes LLM-as-judge path with lexical fallback, extractive fallback generation, and JSONL audit traces",
+      "Dashboard surfaces overview metrics, strategy comparison, failure analysis, and trace-level evidence",
+    ],
+    tags: ["RAG", "FAISS", "Evaluation", "LLM-as-Judge", "Streamlit", "Python"],
+    link: "https://github.com/udbhavsaxena/rag-eval-dashboard",
+    featured: true,
+  },
+  {
+    title: "Chat With PDFs",
+    eyebrow: "User-facing RAG app",
+    impact: "PDF upload/link question-answering",
+    description:
+      "Clean Streamlit app that lets users upload PDFs or paste public PDF URLs, builds a local vector store from extracted page text, and answers questions with page-level citations.",
+    highlights: [
+      "Handles uploads, public PDF links, invalid files, empty PDFs, and scanned/image-only PDFs with clear states",
+      "Uses PyMuPDF extraction, local sentence-transformer embeddings, and retrieved source snippets",
+      "Supports OpenAI answers when configured and a grounded extractive fallback when running locally without an API key",
+    ],
+    tags: ["RAG", "PDF", "Streamlit", "Embeddings", "OpenAI", "PyMuPDF"],
+    link: "https://github.com/udbhavsaxena/ChatWithPDFs",
   },
   {
     title: "Agentic Clinical Documentation",
+    impact: "Production healthcare LLM workflow",
     description:
       "Agentic LLM system using OpenAI function calling and custom orchestration for autonomous generation of progress notes, ISP summaries, and SMART goals. Reduced note completion time by ~70%.",
     tags: ["LLMs", "Agentic AI", "OpenAI", "Healthcare", "Python"],
     link: null,
   },
   {
-    title: "BERT Fine-tune & Compression",
-    description:
-      "94% accuracy on text classification via fine-tuned BERT. Applied DistilBERT distillation, INT8 quantization, and ONNX Runtime optimization — reduced inference latency by ~3× with minimal accuracy loss.",
-    tags: ["BERT", "DistilBERT", "ONNX", "PyTorch", "NLP"],
-    link: null,
-  },
-  {
     title: "CRNN for OCR",
+    impact: "Sequence recognition model",
     description:
       "95% test accuracy on sequence recognition with a CRNN architecture. Full preprocessing and augmentation pipeline with CTC loss decoding.",
     tags: ["Computer Vision", "OCR", "PyTorch", "CTC"],
@@ -71,6 +103,7 @@ export const projects = [
   },
   {
     title: "Character-Level GPT",
+    impact: "Transformer from scratch",
     description:
       "Transformer language model trained from scratch — tokenization, self-attention, training loops, and autoregressive text generation.",
     tags: ["PyTorch", "Transformers", "NLP"],
