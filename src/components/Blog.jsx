@@ -15,6 +15,7 @@ export default function Blog() {
             <header className={styles.header}>
               <p className={styles.kicker}>Food, culture &amp; preference</p>
               <h3>Authenticity Isn&apos;t the Same as Enjoyment</h3>
+              <time className={styles.date} dateTime="2026-08-03">3rd August, 2026</time>
               <p className={styles.dek}>
                 Why the most authentic meal and the meal you enjoy most are not always the same thing.
               </p>
